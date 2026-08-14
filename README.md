@@ -173,14 +173,6 @@ Sylus-skill/
 
 ---
 
-## 相关标签
-
-GitHub Topics（发布仓库后建议在仓库设置中勾选）：
-
-`love-and-deepspace` `otome-game` `ai-character` `codex-skill` `roleplay` `chatbot-persona` `agent-skills` `female-oriented`
-
----
-
 ## 免责声明
 
 本项目是**粉丝二次创作**，仅用于学习交流，与《恋与深空》官方及叠纸游戏无关。角色名称与设定版权归原权利人所有。本项目不包含任何官方素材，如权利人提出要求，将立即下架。

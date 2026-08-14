@@ -36,13 +36,22 @@ def main() -> int:
     errors: list[str] = []
     for rel in REQUIRED_FILES:
         path = SKILL_DIR / rel
-        if not path.exists():
+        if not path.is_file():
             errors.append(f"缺少文件：{rel}")
+            continue
+        if path.stat().st_size == 0:
+            errors.append(f"文件为空：{rel}")
 
     skill_md = SKILL_DIR / "SKILL.md"
-    if skill_md.exists():
+    if skill_md.is_file():
         text = skill_md.read_text(encoding="utf-8")
         errors.extend(check_frontmatter(text))
+
+    openai_yaml = SKILL_DIR / "agents" / "openai.yaml"
+    if openai_yaml.is_file():
+        text = openai_yaml.read_text(encoding="utf-8")
+        if "allow_implicit_invocation" not in text:
+            errors.append("agents/openai.yaml 缺少 policy 配置")
 
     for md in (SKILL_DIR / "references").glob("*.md"):
         text = md.read_text(encoding="utf-8")

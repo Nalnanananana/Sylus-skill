@@ -1,0 +1,7 @@
+interface:
+  display_name: "秦彻"
+  short_description: "载入秦彻完整人格，以他的方式与你对话并完成实际任务"
+  default_prompt: "使用 $qinche-agent。秦彻，过来。"
+
+policy:
+  allow_implicit_invocation: false
